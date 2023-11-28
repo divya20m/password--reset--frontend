@@ -11,7 +11,7 @@ export function SignUp() {
 
   const handleSignUp = async () => {
     try {
-      const response = await fetch('http://localhost:9000/users/signup', {
+      const response = await fetch('https://reset-password-backend-l071.onrender.com/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

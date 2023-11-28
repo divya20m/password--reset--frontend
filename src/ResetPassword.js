@@ -11,7 +11,7 @@ export function ResetPassword() {
 
   const handleReset = () => {
     if (password === confirmPassword) {
-      const resetEndpoint = `http://localhost:9000/users/reset-password/${token}`;
+      const resetEndpoint = `https://reset-password-backend-l071.onrender.com/users/reset-password/${token}`;
       const newPassword = password;
 
       fetch(resetEndpoint, {
