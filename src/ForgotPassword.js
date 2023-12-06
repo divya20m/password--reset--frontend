@@ -9,7 +9,7 @@ export function ForgotPassword() {
 const navigate=useNavigate()
   const handleSendEmail = async () => {
     try {
-      const response = await fetch('https://reset-password-backend-l071.onrender.com/users/forgot-password', {
+      const response = await fetch('http://localhost:9000/users/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,8 +21,9 @@ const navigate=useNavigate()
 
       if (response.ok) {
         setMessage(data.message);
-        console.log(data.resetLink); 
-        navigate("/reset-password/:token")
+        console.log(data.resetLink);
+        
+        // navigate("/reset-password/:token")
         setError('');
       } else {
         setMessage('');
