@@ -10,7 +10,7 @@ export function ResetPassword() {
 
   const handleReset = () => {
     if (password === confirmPassword) {
-      const resetEndpoint = `http://localhost:9000/users/reset-password/${email}/${token}`;
+      const resetEndpoint = `https://password-reset-bgme.onrender.com/users/reset-password/${email}/${token}`;
       const newPassword = password;
 
       fetch(resetEndpoint, {

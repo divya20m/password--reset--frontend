@@ -11,7 +11,7 @@ export function EmailLogin() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://reset-password-backend-l071.onrender.com/users/login', {
+      const response = await fetch('https://password-reset-bgme.onrender.com/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

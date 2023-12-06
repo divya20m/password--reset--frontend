@@ -15,7 +15,7 @@ function App() {
   const [allusers, setAllusers] = useState([]);
   
   useEffect(() => {
-    fetch("https://reset-password-backend-l071.onrender.com/users")
+    fetch("https://password-reset-bgme.onrender.com/users")
       .then((res) => res.json())
       .then((data) => setAllusers(data))
       .catch((error) => console.error('Error fetching users:', error));
