@@ -28,16 +28,26 @@ function App() {
       <Routes>
         <Route path="/login" element={<EmailLogin />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/signedup" element={<SignedUp />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/login/myaccount" element={<MyAccount />} />
         <Route path="/reset-password/:email/:token" element={<ResetPassword />} />
 
       </Routes>
+     
     </div>
   );
 }
 export default App;
 
 
-
+function SignedUp(){
+  return(
+    <div>
+      <h1>
+        Successfully signed up
+      </h1>
+    </div>
+  )
+}
 

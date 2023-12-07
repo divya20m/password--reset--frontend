@@ -23,6 +23,7 @@ export function SignUp() {
         const responseData = await response.json();
         if (responseData.message === 'User signed up successfully') {
           console.log('User signed up successfully!', responseData.result);
+          navigate("/signedup")
         }
       } else {
         const responseData = await response.json();
