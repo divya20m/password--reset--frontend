@@ -12,7 +12,6 @@ export function ResetPassword() {
     if (password === confirmPassword) {
       const resetEndpoint = `https://password-reset-bgme.onrender.com/users/reset-password/${email}/${token}`;
       const newPassword = password;
-
       fetch(resetEndpoint, {
         method: 'POST',
         headers: {
@@ -39,11 +38,33 @@ export function ResetPassword() {
   };
 
   return (
-    <div>
+    <div className='resetpassword'> 
       <h2>Reset Your Password</h2>
-      {!resetSuccess ? ( 
-        <>
+      <form>
+      <TextField
+            label="New Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <TextField
+            label="Confirm New Password"
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <Button variant="contained" onClick={handleReset}>
+            Reset Password
+          </Button>
+        </form>
+    </div>
+  );
+}
+
+export default ResetPassword;
+
+
+{/* <TextField
             label="New Password"
             type="password"
             value={password}
@@ -59,11 +80,7 @@ export function ResetPassword() {
             Reset Password
           </Button>
         </>
-      ) : (
-        <Typography>Password successfully changed!</Typography>
-      )}
-    </div>
-  );
-}
 
-export default ResetPassword;
+
+
+        Typography>Password successfully changed!</Typography> */}

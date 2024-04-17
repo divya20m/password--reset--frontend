@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { TextField, Button, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-
 export function EmailLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,8 +33,40 @@ export function EmailLogin() {
   };
 
   return (
-    <div>
-      <div>
+    <div className='form'>
+      <h1>Login</h1>
+      <form className="textbars"onSubmit={handleLogin}>
+      <TextField
+          id="outlined-basic-email"
+          label="Email"
+          variant="outlined"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+         <TextField
+         className='textfield'
+          id="outlined-basic-password"
+          label="Password"
+          variant="outlined"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+         <Button variant="contained" onClick={handleLogin}>Login</Button>
+      </form>
+      <div className="error-container">
+    {error && <Typography color="error">{error}</Typography>}
+  </div>
+  <span>A New User? Sign Up <Link className='Link' to="/">Click Here</Link></span>
+  <Link className='Link' to="/forgotPassword">Forgot Password</Link>
+      
+      {/* <Button component={Link} to="/forgotPassword">
+        Forgot Password
+      </Button>
+       <div className='messages'>
+        {error && <Typography color="error">{error}</Typography>}
+        </div>
+      <div className='text-bar'>
         <TextField
           id="outlined-basic-email"
           label="Email"
@@ -54,11 +85,13 @@ export function EmailLogin() {
         <Button variant="contained" onClick={handleLogin}>
           Login
         </Button>
-        {error && <Typography color="error">{error}</Typography>}
-      </div>
+        </div>
+  
+        
+      
       <Button component={Link} to="/forgotPassword">
         Forgot Password
-      </Button>
+      </Button> */}
     </div>
   );
 }

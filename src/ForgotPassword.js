@@ -38,7 +38,13 @@ const navigate=useNavigate()
   
 
   return (
-    <div>
+    <div className='form'>
+      
+      <div className="error-container">
+      {message && <Typography style={{color:"green"}}>{message}</Typography>}
+      {error && <Typography color="error">{error}</Typography>}
+      </div>
+      <form className="textbars" onSubmit={handleSendEmail}>
       <TextField
         id="outlined-basic-email"
         label="Email"
@@ -47,8 +53,8 @@ const navigate=useNavigate()
         onChange={(e) => setEmail(e.target.value)}
       />
       <Button onClick={handleSendEmail}>Send Reset Email</Button>
-      {message && <Typography>{message}</Typography>}
-      {error && <Typography color="error">{error}</Typography>}
-    </div>
+      </form>
+      </div>
+   
   );
 }

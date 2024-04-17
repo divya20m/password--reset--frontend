@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { TextField } from '@mui/material';
+import { TextField,Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export function SignUp() {
   const [email, setEmail] = useState('');
@@ -23,7 +24,7 @@ export function SignUp() {
         const responseData = await response.json();
         if (responseData.message === 'User signed up successfully') {
           console.log('User signed up successfully!', responseData.result);
-          navigate("/signedup")
+          navigate("/login/myaccount")
         }
       } else {
         const responseData = await response.json();
@@ -39,8 +40,11 @@ export function SignUp() {
     }
   };
   return (
-    <div>
-      <TextField
+    <div className='form'>
+    <h1>Sign Up</h1>
+    <form className="textbars"onSubmit={handleSignUp}>
+      
+     <TextField
         id="outlined-basic-email"
         label="Email"
         variant="outlined"
@@ -53,10 +57,15 @@ export function SignUp() {
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)} />
-      <Button variant="contained" onClick={handleSignUp}>
+         <Button variant="contained" onClick={handleSignUp}>
         SignUp
       </Button>
-      {error && <p>{error}</p>}
+      </form>
+         <div className="error-container">
+    {error && <Typography color="error">{error}</Typography>}
+  </div>
+     <span>Already a User? <Link className='Link' to="/login">Click Here</Link></span>
+    
     </div>
   );
 }
