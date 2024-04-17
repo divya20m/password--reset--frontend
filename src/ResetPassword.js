@@ -57,6 +57,7 @@ export function ResetPassword() {
             Reset Password
           </Button>
         </form>
+        <Typography>Password successfully changed!</Typography>
     </div>
   );
 }
