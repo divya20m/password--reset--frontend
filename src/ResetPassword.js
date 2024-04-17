@@ -38,7 +38,7 @@ export function ResetPassword() {
   };
 
   return (
-    <div className='resetpassword'> 
+    <div className='form'> 
       <h2>Reset Your Password</h2>
       <form>
       <TextField

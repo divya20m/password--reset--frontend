@@ -59,39 +59,6 @@ export function EmailLogin() {
   </div>
   <span>A New User? Sign Up <Link className='Link' to="/">Click Here</Link></span>
   <Link className='Link' to="/forgotPassword">Forgot Password</Link>
-      
-      {/* <Button component={Link} to="/forgotPassword">
-        Forgot Password
-      </Button>
-       <div className='messages'>
-        {error && <Typography color="error">{error}</Typography>}
-        </div>
-      <div className='text-bar'>
-        <TextField
-          id="outlined-basic-email"
-          label="Email"
-          variant="outlined"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          id="outlined-basic-password"
-          label="Password"
-          variant="outlined"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button variant="contained" onClick={handleLogin}>
-          Login
-        </Button>
-        </div>
-  
-        
-      
-      <Button component={Link} to="/forgotPassword">
-        Forgot Password
-      </Button> */}
     </div>
   );
 }
