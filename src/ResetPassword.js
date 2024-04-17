@@ -40,7 +40,7 @@ export function ResetPassword() {
   return (
     <div className='form'> 
       <h2>Reset Your Password</h2>
-      <form>
+      <form className='resetpassword'>
       <TextField
             label="New Password"
             type="password"

@@ -44,3 +44,9 @@ justify-content: center;
   color: rgb(219, 18, 115); 
   text-decoration: underline; 
 }
+.resetpassword{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2;
+}
